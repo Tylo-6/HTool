@@ -1,14 +1,4 @@
-console.log("opened 1/2");
-// source
-function start() {
-  // open new window
-  // ...
-  // window.open(window.URL,"Ratting","width=550,height=170,left=150,top=200,toolbar=0,status=0,");
-  console.log("working");
-  // inject code into window
-  // ...
+function create() {
+  let win = window.open('',"Ratting","width=550px,height=350px,left=150,top=200,toolbar=0,status=0,"); req = new XMLHttpRequest(); req.open('GET', 'https://raw.githubusercontent.com/Tylo-6/HTool/main/src/window.html'); req.onload = function() { win.document.write(this.responseText); }; req.send();
 }
-// functions
-// ...
-console.log("opened 2/2");
-start();
+create();
