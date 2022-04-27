@@ -10,5 +10,5 @@ window.hax.start = function() {
 }
 // functions
 // ...
-console.log("opened 2/2")
+console.log("opened 2/2");
 hax.start();
