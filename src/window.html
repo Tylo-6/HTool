@@ -1,7 +1,40 @@
 <!DOCTYPE html>
-<html>
-  <p>hi</p>
-  <script>
-    alert('hi');
-  </script>
+<html style="background-color: rgb(0,100,100);">
+    <style>
+        .box {
+            position: absolute;
+            left: 0%;
+            top: 0%;
+            width: 50%;
+            height: 50%;
+            border-style: solid;
+            border-color: black;
+            font-family: 'Source Code Pro';
+            overflow-x: hidden;
+        }
+        .top {
+            position: fixed;
+            top: -3%;
+            left: 0px;
+            height: 25px;
+            width: 50%;
+            border-style: solid;
+            border-color: black;
+            background-color: rgb(0,100,100);
+            z-index: 2;
+            text-align: center;
+        }
+        .text {
+            overflow-y: scroll;
+            position: absolute;
+            top: 10px;
+        }
+    </style>
+    <link href='https://fonts.googleapis.com/css?family=Source Code Pro' rel='stylesheet'>
+    <section class="box" id="output">
+        <p class="top">Output</p>
+        <section class="text">
+            <p>Start ok this is a test to see what the thing will do if it is overflown on the x and hopefully also on the y axis but it may not overflow on the y axis. Start ok this is a test to see what the thing will do if it is overflown on the x and hopefully also on the y axis but it may not overflow on the y axis. Start ok this is a test to see what the thing will do if it is overflown on the x and hopefully also on the y axis but it may not overflow on the y axis. Start ok this is a test to see what the thing will do if it is overflown on the x and hopefully also on the y axis but it may not overflow on the y axis. Start ok this is a test to see what the thing will do if it is overflown on the x and hopefully also on the y axis but it may not overflow on the y axis. Start ok this is a test to see what the thing will do if it is overflown on the x and hopefully also on the y axis but it may not overflow on the y axis. Start ok this is a test to see what the thing will do if it is overflown on the x and hopefully also on the y axis but it may not overflow on the y axis. </p>
+        </section>
+    </section>
 </html>
