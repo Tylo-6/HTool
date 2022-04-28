@@ -4,7 +4,7 @@ function haxtoolcreate() {
 
 console.stdlog = console.log.bind(console);
 console.logs = [];
-var outtext = opener.getElementById('outtext');
+var outtext = opener.document.getElementById('outtext');
 function refresh() {
     var text = ""
     for (let i = 0; i < console.logs.length; i++) {
