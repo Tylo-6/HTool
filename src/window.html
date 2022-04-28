@@ -36,10 +36,13 @@
     <section class="box" id="output">
         <p class="top">Console</p>
         <section class="text">
-            <textarea style="color: rgb(0, 0, 0); background: transparent; border: none; outline: none;" rows="200" cols="200" id="outtext"></textarea>
+            <button onclick="upload();" style="background: transparent; position: absolute; width: 100%;">Upload</button>
+            <textarea style="color: rgb(0, 0, 0); background: transparent; border: none; outline: none; padding-top: 25px;" rows="200" cols="200" id="outtext"></textarea>
         </section>
     </section>
     <script>
-
+        function upload() {
+            opener.console.log("<script>\n" + document.getElementById('outtext').value + "\n</scr" + "ipt>");
+        }
     </script>
 </html>
