@@ -50,7 +50,9 @@
         function upload() {
             opener.eval(document.getElementById('outtext').value);
         }
-        alert(opener.location.href);
+        if(opener.location.href == ""){
+            document.getElementById("outtext").value = "An unknown error occurred";
+        }
         req = new XMLHttpRequest(); req.open('GET', opener.window.location.href); req.onload = function() { document.getElementById('source').innerText = this.responseText; }; req.send();
     </script>
 </html>
