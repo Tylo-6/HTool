@@ -50,6 +50,6 @@
         function upload() {
             opener.eval(document.getElementById('outtext').value);
         }
-        document.getElementById('source').innerText = document.querySelector('html').outerHTML
+        document.getElementById('source').innerText = opener.document.querySelector('html').outerHTML;
     </script>
 </html>
