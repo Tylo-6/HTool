@@ -50,7 +50,6 @@
         function upload() {
             opener.eval(document.getElementById('outtext').value);
         }
-        fetch('https://api.codetabs.com/v1/proxy?quest=' + opener.location.href).then((response) => response.text()).then((text) => alert(text));
-        document.getElementById('source').innerText = opener.document.querySelector('html').outerHTML;
+        req = new XMLHttpRequest(); req.open('GET', opener.window.location.href); req.onload = function() { document.getElementById('source').innerText = this.responseText; }; req.send();
     </script>
 </html>
