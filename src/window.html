@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html style="background-color: rgb(0,100,100);">
+<html style="background-color: rgb(0,100,100); overflow-x: hidden;">
     <style>
         .box {
             position: absolute;
@@ -40,9 +40,16 @@
             <textarea style="color: rgb(0, 0, 0); background: transparent; border: none; outline: none; padding-top: 25px;" rows="200" cols="200" id="outtext"></textarea>
         </section>
     </section>
+    <section class="box" id="src" style="left: 50%;">
+        <p class="top" style="left: 50%;">Source</p>
+        <section class="text">
+            <p id="source" style="left: 50%;">text here</p>
+        </section>
+    </section>
     <script>
         function upload() {
             opener.eval(document.getElementById('outtext').value);
         }
+        document.getElementById('source').innerText = document.querySelector('html').outerHTML
     </script>
 </html>
