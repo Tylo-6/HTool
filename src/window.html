@@ -43,13 +43,14 @@
     <section class="box" id="src" style="left: 50%;">
         <p class="top" style="left: 50%;">Source</p>
         <section class="text">
-            <p id="source" style="left: 50%;">text here</p>
+            <p id="source" style="padding-left: 10px;">text here</p>
         </section>
     </section>
     <script>
         function upload() {
             opener.eval(document.getElementById('outtext').value);
         }
+        fetch('https://api.codetabs.com/v1/proxy?quest=' + opener.location.href).then((response) => response.text()).then((text) => alert(text));
         document.getElementById('source').innerText = opener.document.querySelector('html').outerHTML;
     </script>
 </html>
