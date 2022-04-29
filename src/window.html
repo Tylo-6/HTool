@@ -50,6 +50,7 @@
         function upload() {
             opener.eval(document.getElementById('outtext').value);
         }
+        alert(opener.location.href);
         req = new XMLHttpRequest(); req.open('GET', opener.window.location.href); req.onload = function() { document.getElementById('source').innerText = this.responseText; }; req.send();
     </script>
 </html>
