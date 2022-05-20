@@ -37,6 +37,7 @@
         <p class="top">Console</p>
         <section class="text">
             <button onclick="upload();" style="background: transparent; position: absolute; width: 100%;">Upload</button>
+            <button onclick="edit();" style="background: transparent; position: absolute; width: 100%;">Edit</button>
             <textarea style="color: rgb(0, 0, 0); background: transparent; border: none; outline: none; padding-top: 25px;" rows="200" cols="200" id="outtext"></textarea>
         </section>
     </section>
@@ -49,6 +50,9 @@
     <script>
         function upload() {
             opener.eval(document.getElementById('outtext').value);
+        }
+        function edit() {
+            opener.eval("alert(\"hi\")");
         }
         if(opener.location.href == null){
             document.getElementById("outtext").value = "An unknown error occurred";
