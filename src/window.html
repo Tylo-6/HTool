@@ -6,7 +6,7 @@
             left: 0%;
             top: 0%;
             width: 50%;
-            height: 50%;
+            height: 49%;
             border-style: solid;
             border-color: black;
             font-family: 'Source Code Pro';
@@ -37,25 +37,40 @@
         <p class="top">Console</p>
         <section class="text">
             <button onclick="upload();" style="background: transparent; position: absolute; width: 100%;">Upload</button>
-            <button onclick="edit();" style="background: transparent; position: absolute; width: 100%;">Edit</button>
             <textarea style="color: rgb(0, 0, 0); background: transparent; border: none; outline: none; padding-top: 25px;" rows="200" cols="200" id="outtext"></textarea>
         </section>
     </section>
     <section class="box" id="src" style="left: 50%;">
         <p class="top" style="left: 50%;">Source</p>
         <section class="text">
-            <p id="source" style="padding-left: 10px;">An unknown error occurred</p>
+            <p id="source" style="padding-left: 10px;">An error occurred</p>
+        </section>
+    </section>
+    <section class="box" id="tools" style="top: 50%;">
+        <p class="top" style="top: calc(50% - 20px);">Tools</p>
+        <section class="text">
+            <button id="e" onclick="edit();" style="background: transparent; position: absolute; width: 100%;">Edit: off</button>
+            <p style="text-align: center; padding-top: 10px;">End of list :/</p>
         </section>
     </section>
     <script>
+        var ed = true;
+        function edit() {
+            var ee = document.getElementById("e")
+            if (ed) {
+                opener.document.body.contentEditable = 'true';
+                opener.document.designMode='on';
+                ed = false
+                ee.innerHTML = "Edit: on"
+            } else {
+                opener.document.body.contentEditable = 'false';
+                opener.document.designMode='off';
+                ed = true
+                ee.innerHTML = "Edit: off"
+            }
+        }
         function upload() {
             opener.eval(document.getElementById('outtext').value);
-        }
-        function edit() {
-            opener.eval("alert(\"hi\")");
-        }
-        if(opener.location.href == null){
-            document.getElementById("outtext").value = "An unknown error occurred";
         }
         req = new XMLHttpRequest(); req.open('GET', opener.window.location.href); req.onload = function() { document.getElementById('source').innerText = this.responseText; }; req.send();
     </script>
