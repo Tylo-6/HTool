@@ -44,7 +44,8 @@
     <section class="box" id="src" style="left: 50%;">
         <p class="top" style="left: 50%;">Source</p>
         <section class="text">
-            <p id="source" style="padding-left: 10px;">An error occurred</p>
+            <button onclick="update();" style="background: transparent; position: absolute; width: 100%;">Update</button>
+            <textarea id="source" style="color: rgb(0, 0, 0); background: transparent; border: none; outline: none; padding-top: 25px; padding-left: 10px;" rows="200" cols="200" id="outtext">An Error Occurred</textarea>
         </section>
     </section>
     <section class="box" id="tools" style="top: 50%;">
@@ -70,9 +71,12 @@
                 ee.innerHTML = "Edit: off"
             }
         }
+        function update() {
+            opener.document.write(document.getElementById("source").innerHTML);
+        }
         function upload() {
             opener.eval(document.getElementById('outtext').value);
         }
-        document.getElementById('source').innerText = "<html>" + opener.document.querySelector('html').innerHTML + "</html>";
+        document.getElementById('source').innerText = opener.document.querySelector('html').innerHTML;
     </script>
 </html>
