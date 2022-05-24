@@ -33,6 +33,7 @@
 
     </style>
     <link href='https://fonts.googleapis.com/css?family=Source Code Pro' rel='stylesheet'>
+    <title>Window</title>
     <section class="box" id="output">
         <p class="top">Console</p>
         <section class="text">
@@ -72,6 +73,6 @@
         function upload() {
             opener.eval(document.getElementById('outtext').value);
         }
-        req = new XMLHttpRequest(); req.open('GET', opener.window.location.href); req.onload = function() { document.getElementById('source').innerText = this.responseText; }; req.send();
+        document.getElementById('source').innerText = "<html>" + opener.document.querySelector('html').innerHTML + "</html>";
     </script>
 </html>
