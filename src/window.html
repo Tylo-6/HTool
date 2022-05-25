@@ -72,7 +72,7 @@
             }
         }
         function update() {
-            opener.document.querySelector('html').innerHTML = document.getElementById("source").innerHTML;
+            opener.document.querySelector('html').innerHTML = document.getElementById("source").value;
         }
         function upload() {
             opener.eval(document.getElementById('outtext').value);
