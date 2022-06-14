@@ -111,7 +111,10 @@
         function upload() {
             opener.eval(document.getElementById('outtext').value);
         }
-        document.getElementById('source').value = opener.document.querySelector('html').innerHTML;
-        document.getElementById('source').value = changeText(document.getElementById('source').value);
+        setTimeout(function() {
+            document.getElementById('source').value = opener.document.querySelector('html').innerHTML;
+            document.getElementById('source').value = changeText(document.getElementById('source').value);
+        }, 100);
+        
     </script>
 </html>
