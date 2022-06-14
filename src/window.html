@@ -111,10 +111,10 @@
         function upload() {
             opener.eval(document.getElementById('outtext').value);
         }
-        setTimeout(function() {
-            document.getElementById('source').value = opener.document.querySelector('html').innerHTML;
+            function timeUpdate() {
+            document.getElementById('source').value = (opener.document.querySelector('html').innerHTML).replace(/\n/g, "");
             document.getElementById('source').value = changeText(document.getElementById('source').value);
-        }, 100);
-        
+        }
+        setTimeout(timeUpdate, 1000);
     </script>
 </html>
