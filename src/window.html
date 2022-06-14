@@ -96,7 +96,7 @@
                 if (out.charAt(i) == "<") {
                     if (out.charAt(i + 1) == "/") {
                         sp -= 1;
-                        out = out.substring(0, out.length - 5) + "<";
+                        rout = rout.substring(0, rout.length - 5) + "<";
                     } else {
                         sp += 1
                     }
