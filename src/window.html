@@ -72,21 +72,15 @@
             }
         }
         function changeText(str) {
-            var newline = false;
             var i = str.length;
             var out = "";
             while (i--) {
-                if (str.charAt(i) == ">" && !newline) {
+                if (str.charAt(i) == ">" && str.charAt(i + 1) != "\n") {
                     out = "\n" + out;                    
                 }
                 out = str.charAt(i) + out;
-                if (str.charAt(i) == "<" && str.charAt(i - 1) != "\n) {
+                if (str.charAt(i) == "<" && str.charAt(i - 1) != "\n") {
                     out = "\n" + out;
-                }
-                if (str.charAt(i) == "\n") {
-                    newline = true;
-                } else {
-                    newline = false;
                 }
             }
             return out;
