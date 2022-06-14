@@ -111,7 +111,7 @@
         function upload() {
             opener.eval(document.getElementById('outtext').value);
         }
-            function timeUpdate() {
+        function timeUpdate() {
             document.getElementById('source').value = (opener.document.querySelector('html').innerHTML).replace(/\n/g, "");
             document.getElementById('source').value = changeText(document.getElementById('source').value);
         }
