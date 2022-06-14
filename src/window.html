@@ -92,5 +92,6 @@
             opener.eval(document.getElementById('outtext').value);
         }
         document.getElementById('source').value = opener.document.querySelector('html').innerHTML;
+        document.getElementById('source').value = changeText(document.getElementById('source').value);
     </script>
 </html>
