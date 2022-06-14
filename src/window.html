@@ -87,7 +87,9 @@
             var sp = 0;
             var rout = "";
             while (i <= out.length) {
-                rout += out.charAt(i);
+                if (!(out.charAt(i) == " " && out.charAt(i + 1) == " ")) {
+                    rout += out.charAt(i);
+                }
                 if (out.charAt(i) == "\n") {
                     rout += "    ".repeat(sp);
                 }
