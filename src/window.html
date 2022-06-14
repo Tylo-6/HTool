@@ -45,7 +45,7 @@
         <p class="top" style="left: 50%;">Source</p>
         <section class="text">
             <button onclick="update();" style="background: transparent; position: absolute; width: 100%;">Update</button>
-            <textarea id="source" style="color: rgb(0, 0, 0); background: transparent; border: none; outline: none; padding-top: 25px; padding-left: 10px;" rows="200" cols="200" id="outtext">An Error Occurred</textarea>
+            <textarea onchange="this.value = changeText(this.value);" id="source" style="color: rgb(0, 0, 0); background: transparent; border: none; outline: none; padding-top: 25px; padding-left: 10px;" rows="200" cols="200" id="outtext">An Error Occurred</textarea>
         </section>
     </section>
     <section class="box" id="tools" style="top: 50%;">
@@ -70,6 +70,23 @@
                 ed = true
                 ee.innerHTML = "Edit: off"
             }
+        }
+        function changeText(str) {
+            var newline = false;
+            var i = str.length;
+            var out = "";
+            while (i--) {
+                if (str.charAt(i) == ">" && !newline) {
+                    out = "\n" + out;                    
+                }
+                out = str.charAt(i) + out;
+                if (str.charAt(i) == "\n") {
+                    newline = true;
+                } else {
+                    newline = false;
+                }
+            }
+            return out;
         }
         function update() {
             opener.document.querySelector('html').innerHTML = document.getElementById("source").value;
