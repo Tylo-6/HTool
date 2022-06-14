@@ -52,6 +52,7 @@
         <p class="top" style="top: calc(50% - 20px);">Tools</p>
         <section class="text">
             <button id="e" onclick="edit();" style="background: transparent; position: absolute; width: 100%;">Edit: off</button>
+            <button onclick="updateSource();" style="background: transparent; position: absolute; width: 100%; top: 20px;">Edit: off</button>
             <p style="text-align: center; padding-top: 10px;">End of list :/</p>
         </section>
     </section>
@@ -111,9 +112,9 @@
         function upload() {
             opener.eval(document.getElementById('outtext').value);
         }
-        setTimeout(function(){
+        function updateSource() {
             document.getElementById('source').value = (opener.document.querySelector('html').innerHTML).replace(/(?:\r\n|\r|\n)/g, "");
             document.getElementById('source').value = changeText(document.getElementById('source').value);
-        }, 1000);
+        }
     </script>
 </html>
