@@ -83,7 +83,23 @@
                     out = "\n" + out;
                 }
             }
-            return out;
+            i = 0
+            var sp = 0;
+            var rout = "";
+            while (i <= out.length) {
+                rout += out.charAt(i);
+                if (out.charAt(i) == "\n") {
+                    "    ".repeat(sp);
+                }
+                if (out.charAt(i) == "<") {
+                    if (out.charAt(i + 1) == "/") {
+                        sp -= 1;
+                    } else {
+                        sp += 1
+                    }
+                }
+            }
+            return rout;
         }
         function update() {
             opener.document.querySelector('html').innerHTML = document.getElementById("source").value;
