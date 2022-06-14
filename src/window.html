@@ -80,8 +80,8 @@
                     out = "\n" + out;                    
                 }
                 out = str.charAt(i) + out;
-                if (str.charAt(i) == "<" && !newline) {
-                    out = "\n" + out;                    
+                if (str.charAt(i) == "<" && str.charAt(i - 1) != "\n) {
+                    out = "\n" + out;
                 }
                 if (str.charAt(i) == "\n") {
                     newline = true;
