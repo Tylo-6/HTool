@@ -89,7 +89,7 @@
             while (i <= out.length) {
                 rout += out.charAt(i);
                 if (out.charAt(i) == "\n") {
-                    "    ".repeat(sp);
+                    rout += "    ".repeat(sp);
                 }
                 if (out.charAt(i) == "<") {
                     if (out.charAt(i + 1) == "/") {
