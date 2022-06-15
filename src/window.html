@@ -74,13 +74,6 @@
         }
         function changeText(str) {
             var i = str.length;
-            var unspace = "";
-            while (i--) {
-                if (unspace.charAt(0) != " " && str.charAt(i) == " ") {
-                    unspace = str.charAt(i) + unspace;
-                }
-            }
-            var i = str.length;
             var out = "";
             while (i--) {
                 if ((str.charAt(i) == ">" || str.charAt(i) == ";" || str.charAt(i) == "{" || str.charAt(i) == "}") && (out.charAt(0) != "\n" && out.charAt(0) != ";" && out.charAt(0) != ",")) {
@@ -91,6 +84,23 @@
                     out = "\n" + out;
                 }
             }
+            var i = 0;
+            var tabbed = true;
+            str = out;
+            var unspace = "";
+            while (i <= str.length) {
+                if (!tabbed && str.charAt(i) != " ") {
+                    tabbed = true;
+                }
+                if (tabbed) {
+                    unspace = str.charAt(i) + unspace;
+                }
+                if (tabbed && str.charAt(i) == "\n") {
+                    tabbed = false;
+                }
+                i++;
+            }
+            out = unspace;
             i = 0
             var sp = 0;
             var rout = "";
