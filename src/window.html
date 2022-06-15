@@ -74,6 +74,13 @@
         }
         function changeText(str) {
             var i = str.length;
+            var unspace = "";
+            while (i--) {
+                if (unspace.charAt(0) != " " && str.charAt(i) == " ") {
+                    unspace = str.charAt(i) + unspace;
+                }
+            }
+            var i = str.length;
             var out = "";
             while (i--) {
                 if ((str.charAt(i) == ">" || str.charAt(i) == ";" || str.charAt(i) == "{" || str.charAt(i) == "}") && (out.charAt(0) != "\n" && out.charAt(0) != ";" && out.charAt(0) != ",")) {
@@ -121,9 +128,9 @@
         }
         setTimeout(function() {
             document.getElementById('source').value = (opener.document.querySelector('html').innerHTML).replace(/(?:\r\n|\r|\n)/g, "");
-            document.getElementById('source').value = changeText((document.getElementById('source').value).replace(/  /g, ""));
+            document.getElementById('source').value = changeText(document.getElementById('source').value);
         }, 1000);
         document.getElementById('source').value = (opener.document.querySelector('html').innerHTML).replace(/(?:\r\n|\r|\n)/g, "");
-        document.getElementById('source').value = changeText((document.getElementById('source').value).replace(/  /g, ""));
+        document.getElementById('source').value = changeText(document.getElementById('source').value);
     </script>
 </html>
