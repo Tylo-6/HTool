@@ -76,11 +76,11 @@
             var i = str.length;
             var out = "";
             while (i--) {
-                if ((str.charAt(i) == ">" || str.charAt(i) == ";" || str.charAt(i) == "{" || str.charAt(i) == "}") && (out.charAt(0) != "\n" || out.charAt(0) != ";" || out.charAt(0) != ",")) {
+                if ((str.charAt(i) == ">" || str.charAt(i) == ";" || str.charAt(i) == "{" || str.charAt(i) == "}") && (out.charAt(0) != "\n" && out.charAt(0) != ";" && out.charAt(0) != ",")) {
                     out = "\n" + out;
                 }
                 out = str.charAt(i) + out;
-                if (str.charAt(i) == "<" && str.charAt(i - 1) != "\n") {
+                if ((str.charAt(i) == "<" || str.charAt(i) == "{") && str.charAt(i - 1) != "\n") {
                     out = "\n" + out;
                 }
             }
@@ -93,6 +93,12 @@
                 }
                 if (out.charAt(i) == "\n") {
                     rout += "    ".repeat(sp);
+                }
+                if (out.charAt(i) == "{") {
+                    sp += 1;                    
+                }
+                if (out.charAt(i) == "}") {
+                    sp -= 1;
                 }
                 if (out.charAt(i) == "<") {
                     if (out.charAt(i + 1) == "/") {
