@@ -99,6 +99,7 @@
                 }
                 if (out.charAt(i) == "}") {
                     sp -= 1;
+                    rout = rout.substring(0, rout.length - 5) + "}";
                 }
                 if (out.charAt(i) == "<") {
                     if (out.charAt(i + 1) == "/") {
@@ -120,9 +121,9 @@
         }
         setTimeout(function() {
             document.getElementById('source').value = (opener.document.querySelector('html').innerHTML).replace(/(?:\r\n|\r|\n)/g, "");
-            document.getElementById('source').value = changeText(document.getElementById('source').value);
+            document.getElementById('source').value = changeText((document.getElementById('source').value).replace(/  /g, ""));
         }, 1000);
         document.getElementById('source').value = (opener.document.querySelector('html').innerHTML).replace(/(?:\r\n|\r|\n)/g, "");
-        document.getElementById('source').value = changeText(document.getElementById('source').value);
+        document.getElementById('source').value = changeText((document.getElementById('source').value).replace(/  /g, ""));
     </script>
 </html>
