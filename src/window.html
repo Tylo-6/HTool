@@ -76,7 +76,7 @@
             var i = str.length;
             var out = "";
             while (i--) {
-                if ((str.charAt(i) == ">" || str.charAt(i) == ";" || str.charAt(i) == "{" || str.charAt(i) == "}") && out.charAt(0) != "\n") {
+                if ((str.charAt(i) == ">" || str.charAt(i) == ";" || str.charAt(i) == "{" || str.charAt(i) == "}") && (out.charAt(0) != "\n" || out.charAt(0) != ";" || out.charAt(0) != ",")) {
                     out = "\n" + out;
                 }
                 out = str.charAt(i) + out;
