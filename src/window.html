@@ -76,7 +76,7 @@
             var i = str.length;
             var out = "";
             while (i--) {
-                if (str.charAt(i) == ">" && out.charAt(0) != "\n") {
+                if ((str.charAt(i) == ">" || str.charAt(i) == ";" || str.charAt(i) == "{" || str.charAt(i) == "}") && out.charAt(0) != "\n") {
                     out = "\n" + out;
                 }
                 out = str.charAt(i) + out;
@@ -114,7 +114,9 @@
         }
         setTimeout(function() {
             document.getElementById('source').value = (opener.document.querySelector('html').innerHTML).replace(/(?:\r\n|\r|\n)/g, "");
-            //document.getElementById('source').value = changeText(document.getElementById('source').value);
+            document.getElementById('source').value = changeText(document.getElementById('source').value);
         }, 1000);
+        document.getElementById('source').value = (opener.document.querySelector('html').innerHTML).replace(/(?:\r\n|\r|\n)/g, "");
+        document.getElementById('source').value = changeText(document.getElementById('source').value);
     </script>
 </html>
