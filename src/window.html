@@ -53,7 +53,7 @@
         <section class="text">
             <button id="e" onclick="edit();" style="background: transparent; position: absolute; width: 100%;">Edit: off</button>
             <button style="background: transparent; position: absolute; width: 100%; top: 20px;">Inspect</button>
-            <p style="text-align: center; padding-top: 10px;">End of list :/</p>
+            <p style="text-align: center; padding-top: 30px;">End of list :/</p>
         </section>
     </section>
     <script>
@@ -114,7 +114,7 @@
         }
         setTimeout(function() {
             document.getElementById('source').value = (opener.document.querySelector('html').innerHTML).replace(/(?:\r\n|\r|\n)/g, "");
-            document.getElementById('source').value = changeText(document.getElementById('source').value);
+            //document.getElementById('source').value = changeText(document.getElementById('source').value);
         }, 1000);
     </script>
 </html>
